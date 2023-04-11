@@ -34,9 +34,10 @@ public class Allen_PlusTest extends BaseClass {
 		TCID =101;	
 		login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
 		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
-		Thread.sleep(10000);
-		//login1.enterCpt(UtilityClass.getPFdata("master_cpt"));
+		//Thread.sleep(10000);
+		login1.enterCpt(UtilityClass.getPFdata("master_cpt"));
 		login1.clickOnLoginBtn();
+		Thread.sleep(3000);
 		
 		String actusername = home.getprofilename();
 		String expusername = UtilityClass.getexceldata(0, 0);
