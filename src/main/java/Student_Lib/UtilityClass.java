@@ -47,7 +47,7 @@ public class UtilityClass {
 
 	public static void scrollDown(WebDriver driver)
 	{
-	((JavascriptExecutor) driver).executeScript("window.scrollBy(0,1300)");
+	((JavascriptExecutor) driver).executeScript("window.scrollBy(0,6000)");
 	}
 
 	public static void refreshPage(WebDriver driver)
