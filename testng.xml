@@ -4,9 +4,23 @@
 <listeners>
 <listener class-name="ExtendReports.ExtentReporterNG"/>
 </listeners>
-  <test thread-count="5" name="Test">
+  <test  name="Test">
     <classes>
-      <class name="Student.Allen_plus.Allen_PlusTest"/>
+    
+      <class name="Student.Allen_plus.Allen_PlusscheduleTest"/>
+      <class name="Student.Allen_plus.Allen_Plus_revision_Test"/>
+      <class name="Student.Allen_plus.Allen_Plus_digitalmtl_Test"/>
+      <class name="Student.Allen_plus.Allen_Plus_testreport_Test"/>
+      <class name="Student.Allen_plus.Allen_Plus_doubtsolution_Test"/>
+      <class name="Student.Allen_plus.Allen_Plus_bulletinboard_Test"/>
+      <class name="Student.Allen_plus.Allen_Plus_feedback_Test"/>
+      <class name="Student.Allen_plus.Allen_Plus_quiz_Test"/>
+      <class name="Student.Allen_plus.Allen_Plus_myassets_Test"/>
+      <class name="Student.Allen_plus.Allen_Plus_support_Test"/>
+      <class name="Student.Allen_plus.Allen_Plus_recreationroom_Test"/>
+      <class name="Student.Allen_plus.Allen_Plus_blog_Test"/>
+      <class name="Student.Allen_plus.Allen_Plus_rateus_Test"/>
+        
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

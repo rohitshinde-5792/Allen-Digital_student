@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Student.Allen_plus.Allen_PlusTest">
+      <class name="Student.Allen_plus.Allen_PlusscheduleTest">
         <methods>
-          <include name="appLogout"/>
+          <include name="verifysettingdropdown"/>
           <include name="Setup"/>
-          <include name="LoginWebApp"/>
+          <include name="appLogout"/>
           <include name="logoutApp"/>
-          <include name="BeforeMethod"/>
         </methods>
-      </class> <!-- Student.Allen_plus.Allen_PlusTest -->
+      </class> <!-- Student.Allen_plus.Allen_PlusscheduleTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

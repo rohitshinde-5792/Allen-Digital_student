@@ -19,23 +19,29 @@ public class AllenLoginPage{
 	@FindBy(xpath = "(//button[@type='submit'])[1]")
 	private WebElement LBTN;
 	
-	public AllenLoginPage(WebDriver driver) {
+	public AllenLoginPage(WebDriver driver) 
+	{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void inpAllenFormNumber(String fnumber) {
+	public void inpAllenFormNumber(String fnumber) 
+	
+	{
 		FN.clear();
 		FN.sendKeys(fnumber);
 	}
-	public void inpAllenPassword(String pass) {
+	public void inpAllenPassword(String pass) 
+	{
 		FPWD.clear();
 		FPWD.sendKeys(pass);
 	}
-	public void enterCpt(String master_cpt) {
+	public void enterCpt(String master_cpt) 
+	{
 		CPC.clear();
 		CPC.sendKeys(master_cpt);
 	}
-	public void clickOnLoginBtn() {
+	public void clickOnLoginBtn() 
+	{
 		LBTN.click();
 	}
 }

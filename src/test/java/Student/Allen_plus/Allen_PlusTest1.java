@@ -14,10 +14,7 @@ import org.testng.annotations.Test;
 import Student_Lib.BaseClass;
 import Student_Lib.UtilityClass;
 
-
-public class Allen_PlusTest extends BaseClass 
-
-
+public class Allen_PlusTest1 extends BaseClass 
 
 {
 	int TCID;
@@ -44,34 +41,16 @@ public class Allen_PlusTest extends BaseClass
 		Thread.sleep(3000);
 	}
 	
-	@Test(priority = 1)
-	public void Verifyprofilename() throws IOException, InterruptedException 
 	
-	{
-		TCID =101;	
-
-		String actusername = home.getprofilename();
-		String expusername = UtilityClass.getexceldata(0, 0);
-		Assert.assertEquals(actusername, expusername,"Failed: Both User Names are different.");
-		
-	}
 	
-	@Test(priority = 2)
-	public void verifyrevisionbtn() throws EncryptedDocumentException, IOException 
-	{
-		TCID =102;
-	    boolean act = home.revisionButtonenabled_or_not();
-		
-		Assert.assertTrue(act);
-	}
 	
 	@Test
 	public void verifydigiButtonenabled_or_not() 
 	
 	{
 		TCID=103;
-		boolean act = home.digitalmtlButtonenabled_or_not();
-		Assert.assertTrue(act);
+		boolean aact = home.digitalmtlButtonenabled_or_not();
+		Assert.assertTrue(aact);
 	}
 	
 	
@@ -96,5 +75,7 @@ public class Allen_PlusTest extends BaseClass
 	{
 	 driver.quit();
 	}
+
+
 
 }

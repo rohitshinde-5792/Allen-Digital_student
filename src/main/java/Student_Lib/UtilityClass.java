@@ -16,10 +16,12 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.Select;
 
 public class UtilityClass {
 
-	public static String getexceldata(int row, int col) throws EncryptedDocumentException, IOException {
+	public static String getexceldata(int row, int col) throws EncryptedDocumentException, IOException 
+	{
 		FileInputStream file = new FileInputStream("C:\\Users\\ginger\\eclipse-workspace\\AllenCode-master\\AllenCode-master\\Testdata\\Allen_plus_Testdata.xlsx");
 		Sheet datasheet = WorkbookFactory.create(file).getSheet("Student");
 		String exdata = datasheet.getRow(row).getCell(col).getStringCellValue();
@@ -52,6 +54,11 @@ public class UtilityClass {
 	{
 	driver.navigate().refresh();
 	}
+	
+//	public void sele() {
+//		Select s= new Select();
+//		
+//	}
 
 	@SuppressWarnings("deprecation")
 	public static void implicitlyWait(WebDriver driver)

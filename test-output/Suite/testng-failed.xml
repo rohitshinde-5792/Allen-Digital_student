@@ -6,15 +6,30 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Student.Allen_plus.Allen_PlusTest">
+      <class name="Student.Allen_plus.Allen_Plus_bulletinboard_Test">
         <methods>
-          <include name="appLogout"/>
           <include name="Setup"/>
-          <include name="LoginWebApp"/>
           <include name="logoutApp"/>
-          <include name="BeforeMethod"/>
+          <include name="logintoapp"/>
+          <include name="verifybulletinicon"/>
+          <include name="appLogout"/>
         </methods>
-      </class> <!-- Student.Allen_plus.Allen_PlusTest -->
+      </class> <!-- Student.Allen_plus.Allen_Plus_bulletinboard_Test -->
+      <class name="Student.Allen_plus.Allen_PlusscheduleTest">
+        <methods>
+          <include name="verifynoticationbell"/>
+          <include name="verifyclass"/>
+          <include name="verify_i_button"/>
+          <include name="verifylogoisdisplyed_or_not"/>
+          <include name="Setup"/>
+          <include name="verifyNotificatontext"/>
+          <include name="verifycoursename"/>
+          <include name="verifybatchname"/>
+          <include name="appLogout"/>
+          <include name="logoutApp"/>
+          <include name="logintoapp"/>
+        </methods>
+      </class> <!-- Student.Allen_plus.Allen_PlusscheduleTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
