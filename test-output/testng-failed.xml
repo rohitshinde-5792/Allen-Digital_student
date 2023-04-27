@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Student.Allen_plus.Allen_Plus_revision_Test">
+      <class name="Student.Allen_plus.Allen_Plus_digitalmtl_Test">
         <methods>
+          <include name="verifyfilter"/>
           <include name="logoutApp"/>
           <include name="appLogout"/>
-          <include name="scrollpage"/>
           <include name="Setup"/>
         </methods>
-      </class> <!-- Student.Allen_plus.Allen_Plus_revision_Test -->
+      </class> <!-- Student.Allen_plus.Allen_Plus_digitalmtl_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

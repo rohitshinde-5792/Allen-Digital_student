@@ -148,7 +148,7 @@ public class AllenschedulePage
 	}
 	
 	public boolean validatetodaybutton() {
-		today.click();
+		//today.click();
 		boolean todaybtn = today.isEnabled();
 		return todaybtn;
 	}
@@ -184,9 +184,10 @@ public class AllenschedulePage
 		selecttopic.click();
 	}
 	
-	public boolean validateredeempoint() {
+	public boolean validateredeempoint() throws InterruptedException {
 		profilename.click();
 		Redeempoint.click();
+		Thread.sleep(1500);
 		boolean earn = earnedpoint.isDisplayed();
 		return earn;
 		

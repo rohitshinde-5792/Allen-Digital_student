@@ -6,10 +6,34 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class digitalmaterialpage {
+	//span[text()='Exercise']
 	
-	
-	@FindBy(xpath = "//span[normalize-space()='Digital Material']") private WebElement digmtl;
-	
+	@FindBy(xpath = "//span[text()='Digital Material']") private WebElement digmtl;
+	@FindBy(xpath = "//input[@type='text']") private WebElement searchbox;
+	@FindBy(xpath = "//a[@class='bg-white mr-0']") private WebElement filter;
+	@FindBy(xpath = "//a[text()='Clear']") private WebElement filterclear;
+	@FindBy(xpath = "//span[@class='main-title']") private WebElement maintitle;
+	@FindBy(xpath = "//img[@class='info-icon ng-star-inserted']") private WebElement ibtn;
+	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/closewhite.svg']") private WebElement ibtnclose;
+	@FindBy(xpath = "//span[text()='Exercise']") private WebElement exercise;
+	@FindBy(xpath = "//span[text()='Race']") private WebElement race;
+	@FindBy(xpath = "//span[text()='Special Booklet']") private WebElement SpecialBooklet;
+	@FindBy(xpath = "//span[text()='Class Notes']") private WebElement classnotes;
+	@FindBy(xpath = "(//span[text()='Recorded Content'])[2]") private WebElement RecordedContent;
+	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/left-arrow.png']") private WebElement revisionback;
+	@FindBy(xpath = "//span[text()='Race Video Solutions']") private WebElement racevideosolution;
+	@FindBy(xpath = "//img[@style='width: 25px; cursor: pointer;']") private WebElement racevideoback;
+	@FindBy(xpath = "//span[text()='Exercise Video Solutions']") private WebElement exercisevideo;
+	@FindBy(xpath = "//img[@style='width: 25px; cursor: pointer;']") private WebElement exercisevideoback;
+	@FindBy(xpath = "//span[text()='Class Recordings']") private WebElement ClassRecordings;
+	@FindBy(xpath = "//img[@style='width: 25px; cursor: pointer;']") private WebElement YourClassesback;
+//	@FindBy(xpath = "(//th[text()='Description'])[1]") private WebElement Descriptiontbl;
+//	@FindBy(xpath = "(//th[text()='S. No.'])[1]") private WebElement srNOtbl;
+//	@FindBy(xpath = "//*[text()='Revision']") private WebElement revisionB;
+//	@FindBy(xpath = "//*[text()='Revision']") private WebElement revisionB;
+//	@FindBy(xpath = "//*[text()='Revision']") private WebElement revisionB;
+//	@FindBy(xpath = "//*[text()='Revision']") private WebElement revisionB;
+
 	public digitalmaterialpage(WebDriver driver) 
 	{
 		PageFactory.initElements(driver, this);
@@ -17,12 +41,47 @@ public class digitalmaterialpage {
 	
 
 	
-public boolean digitalmtlButtonenabled_or_not() 
+   public boolean digitalmtlButtonenabled_or_not() 
 	
 	{  
-	digmtl.click();
+	    //digmtl.click();
 	boolean DM = digmtl.isEnabled(); 
 	return DM; 
 	}
 	
+   public void validate_i_btn() throws InterruptedException 
+  
+   {
+	   digmtl.click();
+	   ibtn.click();
+	   Thread.sleep(1500);
+	   ibtnclose.click();
+	   Thread.sleep(1000);
+   }
+  
+   public boolean validatesearchbtn() 
+   {
+	   digmtl.click();
+	   boolean search = searchbox.isEnabled();
+	   return search;
+	   
+   }
+   
+   public void validatefilter() {
+	   digmtl.click();
+	   filter.click();
+	   filterclear.click();   
+}
+   
+   public boolean validatemaintitle() {
+	   
+	   boolean title = maintitle.isDisplayed();
+	   return title;
+}
+   
+   public boolean validateexercise() {
+	
+	   boolean exercisee = exercise.isDisplayed();
+	   return exercisee;
+}
 }

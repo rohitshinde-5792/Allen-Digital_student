@@ -15,14 +15,17 @@ import org.testng.annotations.Test;
 import Student_Lib.BaseClass;
 import Student_Lib.UtilityClass;
 
-public class Allen_Plus_revision_Test extends BaseClass 
+public class Allen_Plus_recordedcontent_Test extends BaseClass 
 
 {
+	
+	//NOTE--- Scrolling pending
+	
 	int TCID;
 	AllenLoginPage login1;
 	AllenschedulePage home;
-	Revisionpage revision;
-	//webdriver driver;
+	Recordedcontentpage revision;
+	
 	@BeforeClass
 	public void Setup() throws IOException, InterruptedException 
 	
@@ -31,7 +34,7 @@ public class Allen_Plus_revision_Test extends BaseClass
 		inilializebrowser();
 		login1 = new AllenLoginPage(driver);
 		home = new AllenschedulePage(driver);
-	    revision=new Revisionpage(driver);
+	    revision=new Recordedcontentpage(driver);
 	    
 	    login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
 		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
@@ -40,18 +43,7 @@ public class Allen_Plus_revision_Test extends BaseClass
 		login1.clickOnLoginBtn();
 	    Thread.sleep(3000);
 	}
-//	@BeforeMethod
-//	public void logintoapp() throws IOException, InterruptedException 
-//	
-//	{
-//		
-//		login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
-//		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
-//		Thread.sleep(500);
-//		login1.enterCpt(UtilityClass.getPFdata("master_cpt"));
-//		login1.clickOnLoginBtn();
-//	    Thread.sleep(3000);
-//	}
+
 	
 	@Test
 	public void verifyrevisionbtn() throws EncryptedDocumentException, IOException 
@@ -62,19 +54,25 @@ public class Allen_Plus_revision_Test extends BaseClass
 		
 	}
 	@Test
-	public void verifyselectsubject() throws EncryptedDocumentException, IOException {
-		
-		
-		  revision.validateselectsubjectd();
+	public void verifyselectsubjectandtopic() throws EncryptedDocumentException, IOException, InterruptedException {
+			
+		  revision.validateselectsubjectdtopic();
+	}
 	
-	}
-	@Test
-	public void scrollpage() throws InterruptedException {
-		revision.revisionButtonenablednot();
-		Thread.sleep(2000);
-	    UtilityClass.scrollDown(driver);
-		Thread.sleep(2000);
-	}
+//	@Test
+//	public void scrollpage() throws InterruptedException {
+//		revision.revisionButtonenablednot();
+//		Thread.sleep(2000);
+//	    UtilityClass.scrollDown(driver);
+//		Thread.sleep(2000);
+//	}
+//	@Test
+//	public void name() {
+//		// not working bcz select tagname is not present
+//		revision.selectdummycode();
+//		
+//	}
+	
 	@AfterMethod
 	public void appLogout(ITestResult result) throws IOException, InterruptedException
 	{
@@ -86,15 +84,15 @@ public class Allen_Plus_revision_Test extends BaseClass
 	   UtilityClass.captureSS(driver, TCID);
 	}
 	
-	home.logoutuser();
+	//home.logoutuser();
 
-	Thread.sleep(2000);
+	
 	}
 	
 	@AfterClass
 	public void logoutApp()
 	{
-		//home.logoutuser();
+		home.logoutuser();
 	     driver.quit();
 	}
 

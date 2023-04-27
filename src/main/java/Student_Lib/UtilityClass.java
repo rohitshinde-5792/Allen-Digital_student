@@ -12,9 +12,13 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 
@@ -55,11 +59,27 @@ public class UtilityClass {
 	driver.navigate().refresh();
 	}
 	
-//	public void sele() {
-//		Select s= new Select();
-//		
-//	}
-
+	public static void selectoption(WebElement ele,int index) 
+	{
+		
+		Select s=new Select(ele);
+		s.selectByIndex(index);
+	}
+	
+    public static void selectoptiontext(WebElement ele,String visibleText) 
+    {
+		
+		Select s=new Select(ele);
+		s.selectByVisibleText(visibleText);
+	}
+    
+    public static void selectoptionvalue(WebElement ele, String value) 
+    {
+    	
+		Select s=new Select(ele);
+		s.selectByValue(value);
+	}
+    
 	@SuppressWarnings("deprecation")
 	public static void implicitlyWait(WebDriver driver)
 	{
@@ -84,4 +104,14 @@ public class UtilityClass {
 	// String mainPageID = al.get(0);
 	driver.switchTo().window(al.get(0));
 	}
+	
+//	public static void perform_action(WebDriver driver,Keys, WebElement value) {
+//		
+//		Actions ele=new Actions(driver);
+//		
+//		//ele.moveToElement(value).perform();
+//		
+//		ele.sendKeys(Keys.ARROW_DOWN, value);
+//	}
+	
 }

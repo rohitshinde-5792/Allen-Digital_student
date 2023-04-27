@@ -22,27 +22,23 @@ public class Allen_Plus_digitalmtl_Test extends BaseClass
 	digitalmaterialpage digitalmtl;
 	
 	@BeforeClass
-	public void Setup() throws IOException 
+	public void Setup() throws IOException, InterruptedException 
 	
 	{
 		
 		inilializebrowser();
 		login1 = new AllenLoginPage(driver);
 		home = new AllenschedulePage(driver);
-	    digitalmtl=new digitalmaterialpage(driver);   
-	}
-	@BeforeMethod
-	public void logintoapp() throws IOException, InterruptedException 
-	
-	{
-		
-		login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
+	    digitalmtl=new digitalmaterialpage(driver); 
+	    
+	    login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
 		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
 		Thread.sleep(500);
 		login1.enterCpt(UtilityClass.getPFdata("master_cpt"));
 		login1.clickOnLoginBtn();
 	    Thread.sleep(3000);
 	}
+	
 	
 	@Test
 	public void verifydigiButtonenabled_or_not() throws InterruptedException 
@@ -52,6 +48,36 @@ public class Allen_Plus_digitalmtl_Test extends BaseClass
 		boolean act = digitalmtl.digitalmtlButtonenabled_or_not();
 		Assert.assertTrue(act);
 		 Thread.sleep(3000);
+	}
+	@Test
+	public void validate_i_btn() throws InterruptedException 
+	{
+		TCID=302;
+		digitalmtl.validate_i_btn();
+		
+	}
+	@Test
+	public void verifysearchbox() {
+		
+		TCID=303;
+		boolean act = digitalmtl.validatesearchbtn();
+		Assert.assertTrue(act);
+	}
+	@Test
+	public void verifyfilter() {
+		TCID=304;
+		digitalmtl.validatefilter();
+	}
+	@Test
+	public void verifymaintitle() {
+		boolean act = digitalmtl.validatemaintitle();
+		Assert.assertTrue(act);
+	}
+	@Test
+	public void verifyexersice() {
+		
+		boolean act = digitalmtl.validateexercise();
+		Assert.assertTrue(act);
 	}
 	
 	@AfterMethod
@@ -65,15 +91,13 @@ public class Allen_Plus_digitalmtl_Test extends BaseClass
 	   UtilityClass.captureSS(driver, TCID);
 	}
 	
-	home.logoutuser();
-
-	Thread.sleep(2000);
+	
 	}
 	
 	@AfterClass
 	public void logoutApp()
 	{
-		//home.logoutuser();
+		home.logoutuser();
 	     driver.quit();
 	}
 

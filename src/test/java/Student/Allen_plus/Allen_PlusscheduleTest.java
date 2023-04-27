@@ -216,7 +216,7 @@ public class Allen_PlusscheduleTest extends BaseClass
 		Assert.assertTrue(act);
 	}
 	@Test
-	public void verifyrdeempoint() {
+	public void verifyrdeempoint() throws InterruptedException {
 		TCID=120;
 		boolean act = home.validateredeempoint();
 		Assert.assertTrue(act);
@@ -236,10 +236,7 @@ public class Allen_PlusscheduleTest extends BaseClass
 	   UtilityClass.captureSS(driver, TCID);
 	}
 	
-     
-	// home.logoutuser();
-
-	
+     // home.logoutuser();
 	}
 	
 	@AfterClass
