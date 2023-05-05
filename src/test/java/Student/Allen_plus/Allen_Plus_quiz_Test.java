@@ -22,7 +22,7 @@ public class Allen_Plus_quiz_Test extends BaseClass
 	quizpage quiz;
 	
 	@BeforeClass
-	public void Setup() throws IOException 
+	public void Setup() throws IOException, InterruptedException 
 	
 	{
 		
@@ -31,23 +31,16 @@ public class Allen_Plus_quiz_Test extends BaseClass
 		home = new AllenschedulePage(driver);
 	    quiz=new quizpage(driver);
 	   
-	    
-	   
-	}
-	@BeforeMethod
-	public void logintoapp() throws IOException, InterruptedException 
-	
-	{
-		
-		login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
+	    login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
 		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
 		Thread.sleep(500);
 		login1.enterCpt(UtilityClass.getPFdata("master_cpt"));
 		login1.clickOnLoginBtn();
 	    Thread.sleep(3000);
+	   
 	}
 	
-	@Test
+	@Test(priority=0)
 	public void verifyquiz() 
 	
 	{
@@ -56,6 +49,15 @@ public class Allen_Plus_quiz_Test extends BaseClass
 		Assert.assertTrue(act);
 	}
 	
+	@Test(priority=1)
+	public void verifyquizibtn() throws InterruptedException 
+	{
+		TCID=802;
+
+		quiz.validateIbtn();
+		quiz.validateIbtn_close();
+		
+	}
 	@AfterMethod
 	public void appLogout(ITestResult result) throws IOException, InterruptedException
 	{
@@ -67,15 +69,12 @@ public class Allen_Plus_quiz_Test extends BaseClass
 	   UtilityClass.captureSS(driver, TCID);
 	}
 	
-	home.logoutuser();
-
-	Thread.sleep(2000);
 	}
 	
 	@AfterClass
 	public void logoutApp()
 	{
-		//home.logoutuser();
+		home.logoutuser();
 	     driver.quit();
 	}
 

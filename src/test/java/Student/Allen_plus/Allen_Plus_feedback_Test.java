@@ -22,19 +22,13 @@ public class Allen_Plus_feedback_Test extends BaseClass {
 	
 	
 	@BeforeClass
-	public void Setup() throws IOException 
+	public void Setup() throws IOException, InterruptedException 
 	
 	{
 		inilializebrowser();
 		feedback=new feedbackpage(driver);
 		login1 = new AllenLoginPage(driver);
 		home = new AllenschedulePage(driver);
-	}
-	
-	@BeforeMethod
-	public void logintoapp() throws IOException, InterruptedException 
-	
-	{
 		
 		login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
 		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
@@ -44,8 +38,10 @@ public class Allen_Plus_feedback_Test extends BaseClass {
 	    Thread.sleep(3000);
 	}
 	
-	@Test
-	public void verifyfeedback() 
+	
+	
+	@Test(priority=0)
+	public void verifyfeedback() throws InterruptedException 
 	
 	{
 		TCID=701;
@@ -53,26 +49,31 @@ public class Allen_Plus_feedback_Test extends BaseClass {
 		Assert.assertTrue(act);
 	}
 	
+	@Test(priority=1)
+	public void verifyfeedbackibtn() throws InterruptedException 
+	
+	{
+		TCID=702;
+		feedback.validatefeedbaclibtn();
+		feedback.validatefeedbaclibtnclose();
+		
+	}
 	@AfterMethod
 	public void appLogout(ITestResult result) throws IOException, InterruptedException
 	{
-
-
+		
 	if(result.getStatus()==ITestResult.FAILURE)
 
 	{
 	   UtilityClass.captureSS(driver, TCID);
 	}
 	
-	home.logoutuser();
-
-	Thread.sleep(2000);
 	}
 	
 	@AfterClass
 	public void logoutApp()
 	{
-		//home.logoutuser();
+		home.logoutuser();
 	     driver.quit();
 	}
 

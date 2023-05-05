@@ -26,7 +26,7 @@ public class digitalmaterialpage {
 	@FindBy(xpath = "//span[text()='Exercise Video Solutions']") private WebElement exercisevideo;
 	@FindBy(xpath = "//img[@style='width: 25px; cursor: pointer;']") private WebElement exercisevideoback;
 	@FindBy(xpath = "//span[text()='Class Recordings']") private WebElement ClassRecordings;
-	@FindBy(xpath = "//img[@style='width: 25px; cursor: pointer;']") private WebElement YourClassesback;
+	@FindBy(xpath = "//img[@style='width: 25px; cursor: pointer;']") private WebElement Classerecordingback;
 //	@FindBy(xpath = "(//th[text()='Description'])[1]") private WebElement Descriptiontbl;
 //	@FindBy(xpath = "(//th[text()='S. No.'])[1]") private WebElement srNOtbl;
 //	@FindBy(xpath = "//*[text()='Revision']") private WebElement revisionB;
@@ -80,8 +80,80 @@ public class digitalmaterialpage {
 }
    
    public boolean validateexercise() {
-	
+	   digmtl.click();
+	   exercise.click();
 	   boolean exercisee = exercise.isDisplayed();
 	   return exercisee;
 }
+   
+   public boolean validaterace() {
+	   digmtl.click();
+	   race.click();
+	   boolean racee = race.isDisplayed();
+	   return racee;	
+}
+   
+   public boolean validateSpecialBooklet() {
+	   digmtl.click();
+	   SpecialBooklet.click();
+	   boolean booklet = SpecialBooklet.isDisplayed();
+	   return booklet;
+}
+   
+   public boolean validateclassnotes() {
+	   digmtl.click();
+	   classnotes.click();
+	   boolean notes = classnotes.isDisplayed();
+	   return notes;
+}
+   public boolean validateRecordedContent() {
+	   digmtl.click();
+	   RecordedContent.click();
+	   boolean recordcon = RecordedContent.isDisplayed();
+	   return recordcon;
+	     
+}
+   
+   public void validateRecordedContentback() {
+	   
+	   revisionback.click();
+	
+}
+   public boolean validateracevideosolution() {
+	   digmtl.click();
+	   racevideosolution.click();
+	   boolean racevideo = racevideosolution.isDisplayed();
+	   return racevideo;
+}
+   
+   public void validateracevideoback() {
+	
+	   racevideoback.click();
+}
+   
+   public boolean validateexercisevideo() {
+	   digmtl.click();
+	   exercisevideo.click();
+	   boolean exevideo = exercisevideo.isDisplayed();
+	   return exevideo;
+	
+}
+   
+   public void validateexercisevideoback() {
+	   
+	   exercisevideoback.click();
+}
+ public boolean validateClassRecordings() {
+	// digmtl.click();
+	 ClassRecordings.click();
+	 boolean classrecord = ClassRecordings.isDisplayed();
+	 return classrecord;
+	 
+}
+ 
+ public void validateClasserecordingback() {
+	
+	 Classerecordingback.click();
+}
+   
 }

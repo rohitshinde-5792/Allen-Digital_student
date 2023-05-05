@@ -23,21 +23,15 @@ public class Allen_Plus_myassets_Test extends BaseClass
 	
 	
 	@BeforeClass
-	public void Setup() throws IOException 
+	public void Setup() throws IOException, InterruptedException 
 	
 	{
 		inilializebrowser();
 		login1 = new AllenLoginPage(driver);
 		home = new AllenschedulePage(driver);
 	    myasset=new myassetpage(driver);  
-	}
-	
-	@BeforeMethod
-	public void logintoapp() throws IOException, InterruptedException 
-	
-	{
-		
-		login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
+	    
+	    login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
 		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
 		Thread.sleep(500);
 		login1.enterCpt(UtilityClass.getPFdata("master_cpt"));
@@ -46,7 +40,9 @@ public class Allen_Plus_myassets_Test extends BaseClass
 	}
 	
 	
-	@Test
+	
+	
+	@Test(priority=0)
 	public void verifyMyAssets() 
 	
 	{
@@ -55,26 +51,48 @@ public class Allen_Plus_myassets_Test extends BaseClass
 		Assert.assertTrue(act);
 	}
 	
+	@Test(priority=1)
+	public void verifyMynotes() throws InterruptedException 
+	
+	{
+		TCID=902;
+		myasset.validatemynotesibtn();
+		myasset.validatemynotesibtnclose();
+	}
+	
+	@Test(priority=2)
+	public void verifyMynotesfilter() throws InterruptedException 
+	
+	{
+		TCID=903;
+		myasset.validatenotefilter();
+		myasset.validatenotefilterclose();
+	}
+	@Test(priority=3)
+	public void verifyMyHomework() throws InterruptedException 
+	
+	{
+		TCID=903;
+		myasset.validateHW();
+		myasset.validatehwibtn();
+		myasset.validatehwibtnclose();
+	}
+	
 	@AfterMethod
 	public void appLogout(ITestResult result) throws IOException, InterruptedException
 	{
-
-
-	if(result.getStatus()==ITestResult.FAILURE)
+      if(result.getStatus()==ITestResult.FAILURE)
 
 	{
 	   UtilityClass.captureSS(driver, TCID);
 	}
 	
-	home.logoutuser();
-
-	Thread.sleep(2000);
 	}
 	
 	@AfterClass
 	public void logoutApp()
 	{
-		//home.logoutuser();
+		home.logoutuser();
 	     driver.quit();
 	}
 

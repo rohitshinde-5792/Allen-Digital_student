@@ -45,7 +45,7 @@ public class Allen_Plus_recordedcontent_Test extends BaseClass
 	}
 
 	
-	@Test
+	@Test(priority=0)
 	public void verifyrevisionbtn() throws EncryptedDocumentException, IOException 
 	{
 		TCID =201;
@@ -53,10 +53,27 @@ public class Allen_Plus_recordedcontent_Test extends BaseClass
 		Assert.assertTrue(act);
 		
 	}
-	@Test
+	@Test(priority=1)
+	public void verifyvideo() throws InterruptedException {
+		
+		revision.validatefirstvideo();
+		revision.validatevideoback();
+	}
+//	@Test(priority=2)
+//	public void verifyfinalplay() throws InterruptedException {
+//		
+//		//revision.validatefinalplay();
+//		//revision.validatevideoback();
+//		revision.validateorgchemistry();
+//	}
+	@Test(priority=3)
 	public void verifyselectsubjectandtopic() throws EncryptedDocumentException, IOException, InterruptedException {
-			
-		  revision.validateselectsubjectdtopic();
+		  
+		  revision.validateselectsubject();
+		  revision.validateorgchemistry();
+		  revision.validatetopic();
+		  revision.validateorgchemnomenclature();
+		  revision.validateapplybtn();
 	}
 	
 //	@Test
@@ -84,8 +101,6 @@ public class Allen_Plus_recordedcontent_Test extends BaseClass
 	   UtilityClass.captureSS(driver, TCID);
 	}
 	
-	//home.logoutuser();
-
 	
 	}
 	
@@ -93,7 +108,7 @@ public class Allen_Plus_recordedcontent_Test extends BaseClass
 	public void logoutApp()
 	{
 		home.logoutuser();
-	     driver.quit();
+	    driver.quit();
 	}
 
 

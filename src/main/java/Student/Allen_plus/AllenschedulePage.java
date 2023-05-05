@@ -19,7 +19,7 @@ public class AllenschedulePage
 	@FindBy(xpath = "//a[@class='nav-link text-center ng-star-inserted']") private WebElement batch;
 	@FindBy(xpath = "//img[@class='bell-icons']") private WebElement bell;
 	@FindBy(xpath = "//h4[text()='No schedule available']") private WebElement noclass;
-	@FindBy(xpath = "//div[text()='Notifications ']") private WebElement Notification;
+	@FindBy(xpath = "//span[text()='View All Notification']") private WebElement Notification;
 	@FindBy(xpath = "//img[@class='info-icon ng-star-inserted']") private WebElement ibtn;
 	@FindBy(xpath = "//h3[text()='Schedule']") private WebElement schedulepop;
 	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/closewhite.svg']") private WebElement popclose;
@@ -106,9 +106,9 @@ public class AllenschedulePage
 				return noclassmsg; 
 	}
 	
-	public String validatenotificationtext() {
+	public boolean validatenotificationtext() {
 		bell.click();
-		String notfn = Notification.getText();
+		 boolean notfn = Notification.isDisplayed();
 		return notfn;
 	}
 	

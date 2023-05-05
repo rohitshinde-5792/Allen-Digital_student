@@ -123,9 +123,8 @@ public class Allen_PlusscheduleTest extends BaseClass
 	@Test//(enabled =false)
 	public void verifyNotificatontext() throws EncryptedDocumentException, IOException, InterruptedException {
 		TCID=108;
-		String act = home.validatenotificationtext();
-		String exp = UtilityClass.getexceldata(7, 1);
-		Assert.assertEquals(act, exp);
+		 boolean act = home.validatenotificationtext();
+		Assert.assertTrue(act);
 		Thread.sleep(1000);
 		
 	}

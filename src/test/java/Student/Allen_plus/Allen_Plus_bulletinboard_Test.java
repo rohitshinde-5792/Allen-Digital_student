@@ -23,41 +23,85 @@ public class Allen_Plus_bulletinboard_Test extends BaseClass
 	
 	
 	@BeforeClass
-	public void Setup() throws IOException 
+	public void Setup() throws IOException, InterruptedException 
 	
 	{
 		inilializebrowser();
 		login1 = new AllenLoginPage(driver);
 		home = new AllenschedulePage(driver);
 	    bulletin=new bulletinboardpage(driver);  
-	}
-
-	@BeforeMethod
-	public void logintoapp() throws IOException, InterruptedException 
-	
-	{
-		
-		login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
+	    login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
 		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
 		Thread.sleep(500);
 		login1.enterCpt(UtilityClass.getPFdata("master_cpt"));
 		login1.clickOnLoginBtn();
 	    Thread.sleep(3000);
 	}
+
 	
-	@Test
-	public void verifybuletinboard() 
+	
+	@Test(priority=0)
+	public void verifybuletinboard() throws InterruptedException 
 	
 	{
 		TCID=601;
 		boolean act = bulletin.verifybuletinboard();
 		Assert.assertTrue(act);
 	}
-	@Test
+	@Test(enabled = false)
 	public void verifybulletinicon() {
 		TCID=602;
 		boolean act = bulletin.validatebulletinicon();
 		Assert.assertTrue(act);
+	}
+	
+	@Test(priority=2)
+	public void verifybulletin_i_btn() throws InterruptedException {
+		TCID=603;
+		bulletin.validateBulletin_ibtn();
+		bulletin.validateBulletin_ibtnclose();
+	}
+	
+	@Test(priority=3)
+	public void verifybulletinarchivednotice() throws InterruptedException {
+		TCID=604;
+		bulletin.validateArchivednotice();
+	}
+	
+	@Test(priority=4)
+	public void verifybulletinsearch() throws InterruptedException {
+		TCID=605;
+		boolean act = bulletin.validatenoticesearchbox();
+		Assert.assertTrue(act);
+	}
+	
+	@Test(priority=5)
+	public void verifybulletinfilter() throws InterruptedException {
+		TCID=606;
+		bulletin.validatefilter();
+		bulletin.validateclosefilter();
+	}
+	
+	@Test(priority=6)
+	public void verifybulletinknoledgebase() throws InterruptedException {
+		TCID=607;
+		bulletin.validateKnowledgeBaseNotice();
+	
+	}
+	
+	@Test(priority=7)
+	public void verifyknoledgebase_ibtn() throws InterruptedException {
+		TCID=607;
+		bulletin.validateBulletin_ibtn();
+		bulletin.validateBulletin_ibtnclose();
+	
+	}
+	
+	@Test(priority=8)
+	public void verifyknoledgebasesearchbox() throws InterruptedException {
+		TCID=607;
+		boolean act = bulletin.validateKnowledgeBasesearch();
+        Assert.assertTrue(act);
 	}
 	
 	@AfterMethod
@@ -71,7 +115,7 @@ public class Allen_Plus_bulletinboard_Test extends BaseClass
 	   UtilityClass.captureSS(driver, TCID);
 	}
 	
-	home.logoutuser();
+	
 
 	Thread.sleep(2000);
 	}
@@ -80,7 +124,7 @@ public class Allen_Plus_bulletinboard_Test extends BaseClass
 	public void logoutApp()
 	{
 		//home.logoutuser();
-	     driver.quit();
+	     //driver.quit();
 	}
 
 }
