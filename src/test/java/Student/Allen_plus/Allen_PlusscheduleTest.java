@@ -44,10 +44,12 @@ public class Allen_PlusscheduleTest extends BaseClass
 		login1.enterCpt(UtilityClass.getPFdata("master_cpt"));
 		login1.clickOnLoginBtn();
 	    Thread.sleep(1000);   //increase implicitly wait
-//	    session.clicksession();
-//		session.clickselectbtn();
-		driver.navigate().refresh();
-	    //driver.switchTo().alert().accept();
+
+//	      session.clicksession();
+//		  session.clickselectbtn();
+	    
+		  driver.navigate().refresh();
+	 //   driver.switchTo().alert().accept();
 	 //   driver.switchTo().alert().dismiss();
 	}
 
