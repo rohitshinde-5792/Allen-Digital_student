@@ -22,7 +22,7 @@ public class Allen_Plus_testreport_Test extends BaseClass
 	testandreportpage testreport;
 	
 	@BeforeClass
-	public void Setup() throws IOException 
+	public void Setup() throws IOException, InterruptedException 
 	
 	{
 		
@@ -31,14 +31,7 @@ public class Allen_Plus_testreport_Test extends BaseClass
 		home = new AllenschedulePage(driver);
 	    testreport=new testandreportpage(driver);
 	    
-	   
-	}
-	@BeforeMethod
-	public void logintoapp() throws IOException, InterruptedException 
-	
-	{
-		
-		login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
+	    login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
 		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
 		Thread.sleep(500);
 		login1.enterCpt(UtilityClass.getPFdata("master_cpt"));

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
 
 public class doubtandsolutionpage {
 	
@@ -75,8 +76,16 @@ public class doubtandsolutionpage {
 	
 	public void validateAskdoubtbtn() throws InterruptedException {
 		
-		Askdoubtbtn.click();
-		Thread.sleep(4500);
+		boolean abc = Askdoubtbtn.isEnabled();    //Askdoubtbtn.click(); 
+		if(abc==true)
+		{
+			Askdoubtbtn.click();
+		}
+		else
+		{
+			Reporter.log("button is not clickable",true);
+		}
+		//Thread.sleep(4500);
 		Doubtok.click();
 	}
 	

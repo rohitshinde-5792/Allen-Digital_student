@@ -8,7 +8,16 @@ import org.openqa.selenium.support.PageFactory;
 public class testandreportpage {
 	
 	@FindBy(xpath = "//span[text()='Test and Reports ']")private WebElement TR;
-
+	@FindBy(xpath = "//span[text()='Test and Reports ']")private WebElement TRibtn;
+//	@FindBy(xpath = "//span[text()='Test and Reports ']")private WebElement TR;
+//	@FindBy(xpath = "//span[text()='Test and Reports ']")private WebElement TR;
+//	@FindBy(xpath = "//span[text()='Test and Reports ']")private WebElement TR;
+//	@FindBy(xpath = "//span[text()='Test and Reports ']")private WebElement TR;
+//	@FindBy(xpath = "//span[text()='Test and Reports ']")private WebElement TR;
+//	@FindBy(xpath = "//span[text()='Test and Reports ']")private WebElement TR;
+//	@FindBy(xpath = "//span[text()='Test and Reports ']")private WebElement TR;
+//	@FindBy(xpath = "//span[text()='Test and Reports ']")private WebElement TR;
+//	@FindBy(xpath = "//span[text()='Test and Reports ']")private WebElement TR;
 
 	public testandreportpage(WebDriver driver) 
 	{

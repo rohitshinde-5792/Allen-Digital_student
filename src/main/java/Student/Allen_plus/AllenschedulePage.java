@@ -5,15 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AllenschedulePage 
+public class AllenschedulePage   // 22012281 vishal singh  // 22684033 jayant kumar
 {
 	@FindBy(xpath = "//li[@class='nav-item profile mr-2 ml-2']//a")private WebElement profilename;
 	@FindBy(xpath = "(//div[@class='btn'])[2]") private WebElement month;
 	@FindBy(xpath = "//a[@class='navbar-brand main-logo mr-sm-3 ml-4 ml-sm-0']") private WebElement ADlogo;
 	@FindBy(xpath = "//a[normalize-space()='Logout']") private WebElement logout;
 	@FindBy(xpath = "//div[@class='stream-name']") private WebElement stream;
-	//@FindBy(xpath = "//span[@class='p-dialog-header-close-icon ng-tns-c83-15 pi pi-times']") private WebElement reclecerrorclose;
-	//@FindBy(xpath = "//span[@class='ml-2 ng-star-inserted']//img") private WebElement reclec;
+	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/closewhite.svg']")
+	private WebElement loginpopupclose;
+	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/left-arrow.png']") 
+	private WebElement yourclassback;
 	//@FindBy(xpath = "//b[normalize-space()='The videos are available only on the Mobile App.']") private WebElement errormsg;
 	@FindBy(xpath = "//span[text()='Schedule']") private WebElement schedule;
 	@FindBy(xpath = "//a[@class='nav-link text-center ng-star-inserted']") private WebElement batch;
@@ -22,7 +24,8 @@ public class AllenschedulePage
 	@FindBy(xpath = "//span[text()='View All Notification']") private WebElement Notification;
 	@FindBy(xpath = "//img[@class='info-icon ng-star-inserted']") private WebElement ibtn;
 	@FindBy(xpath = "//h3[text()='Schedule']") private WebElement schedulepop;
-	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/closewhite.svg']") private WebElement popclose;
+	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/closewhite.svg']") 
+	private WebElement popclose;
 	@FindBy(xpath = "//div[@class='float-left cal-message-text']") private WebElement greetingmsg;
 	@FindBy(xpath = "//div[@class='float-right cal-date']") private WebElement date;
 	@FindBy(xpath = "(//a[@class='today-btn'])[1]") private WebElement yourclass;
@@ -40,9 +43,13 @@ public class AllenschedulePage
 	@FindBy(xpath = "//a[text()=' Change Password']") private WebElement changepass;  
 	@FindBy(xpath = "(//a[@class='dropdown-item'])[2]") private WebElement setting;
 	@FindBy(xpath = "//button[text()='Cancel']") private WebElement accesreqcancel;
-	 @FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/hemb-icon.png']") private WebElement backbtn;	 
-	 @FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/left-arrow.png']") private WebElement yourclassbackbtn;
-//	 @FindBy(xpath = "//p[text()='Earned ']") private WebElement earnedpoint;
+	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/hemb-icon.png']")
+	private WebElement backbtn;	 
+	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/left-arrow.png']")
+	private WebElement yourclassbackbtn;
+	@FindBy(xpath = "//div[@class='main-tit']//span[@class='badges']") 
+	private WebElement currentnotificationcount;
+	//div[@class='main-tit']//span[@class='badges'] notification count
 	
 	public AllenschedulePage(WebDriver driver) 
 	{
@@ -116,6 +123,7 @@ public class AllenschedulePage
 	{
 		ibtn.click();	
 	}
+
 	public String popupname() {
 		 String pop = schedulepop.getText();
 		return pop;
@@ -161,8 +169,10 @@ public class AllenschedulePage
 		
 	}
 	
-	public void validateaccessreqcancel() {
+	public void validateaccessreqcancel() throws InterruptedException {
 		accesreqcancel.click();
+		Thread.sleep(2000);
+		
 	}
 	public boolean validateyourclassbtn() {
 		
@@ -210,5 +220,21 @@ public class AllenschedulePage
 		yourclassapply.click();
 		yourclassbackbtn.click();
 		
+	}
+	
+	public String validatecurrentnotificationcount() {
+		
+		String notcount = currentnotificationcount.getText();
+		return notcount;
+	}
+	
+	public void validateloginpopupclose() {
+		
+		loginpopupclose.click();
+	}
+	
+	public void validateyourclassback() {
+		
+		yourclassback.click();
 	}
 }

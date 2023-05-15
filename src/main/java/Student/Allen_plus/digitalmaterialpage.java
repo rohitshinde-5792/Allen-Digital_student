@@ -23,9 +23,9 @@ public class digitalmaterialpage {
 	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/left-arrow.png']") private WebElement revisionback;
 	@FindBy(xpath = "//span[text()='Race Video Solutions']") private WebElement racevideosolution;
 	@FindBy(xpath = "//img[@style='width: 25px; cursor: pointer;']") private WebElement racevideoback;
-	@FindBy(xpath = "//span[text()='Exercise Video Solutions']") private WebElement exercisevideo;
+	@FindBy(xpath = "//span[normalize-space()='Exercise Video Solutions']") private WebElement exercisevideo;
 	@FindBy(xpath = "//img[@style='width: 25px; cursor: pointer;']") private WebElement exercisevideoback;
-	@FindBy(xpath = "//span[text()='Class Recordings']") private WebElement ClassRecordings;
+	@FindBy(xpath = "//span[normalize-space()='Class Recordings']") private WebElement ClassRecordings;
 	@FindBy(xpath = "//img[@style='width: 25px; cursor: pointer;']") private WebElement Classerecordingback;
 //	@FindBy(xpath = "(//th[text()='Description'])[1]") private WebElement Descriptiontbl;
 //	@FindBy(xpath = "(//th[text()='S. No.'])[1]") private WebElement srNOtbl;

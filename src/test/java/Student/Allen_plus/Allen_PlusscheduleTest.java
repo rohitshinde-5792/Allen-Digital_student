@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -25,22 +26,29 @@ public class Allen_PlusscheduleTest extends BaseClass
 	int TCID;
 	AllenLoginPage login1;
 	AllenschedulePage home;
-	
-	
+	selectsessionpage session;
+	ChromeOptions op=new ChromeOptions();
+
 	@BeforeClass
 	public void Setup() throws IOException, InterruptedException 
 	
 	{
-		inilializebrowser();
+		 inilializebrowser();
 		login1 = new AllenLoginPage(driver);
 		home = new AllenschedulePage(driver);
-
+		//session = new selectsessionpage(driver);
+		
 		login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
 		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
 		Thread.sleep(500);
 		login1.enterCpt(UtilityClass.getPFdata("master_cpt"));
 		login1.clickOnLoginBtn();
-	    Thread.sleep(3000);
+	    Thread.sleep(1000);   //increase implicitly wait
+//	    session.clicksession();
+//		session.clickselectbtn();
+		driver.navigate().refresh();
+	    //driver.switchTo().alert().accept();
+	 //   driver.switchTo().alert().dismiss();
 	}
 
 //	@BeforeMethod
@@ -57,7 +65,13 @@ public class Allen_PlusscheduleTest extends BaseClass
 //	    Thread.sleep(3000);
 //	}
 	
-	@Test
+//	@Test(priority=-2)
+//	public void verifyloginpopupclose() {
+//		
+//		home.popupclose();
+//	}
+	
+	@Test(priority=-1)
 	public void Verifyprofilename() throws IOException, InterruptedException 
 	
 	{
@@ -70,15 +84,15 @@ public class Allen_PlusscheduleTest extends BaseClass
 		
 	}
 	
-	@Test
+	@Test(priority=0)
 	public void verifylogoisdisplyed_or_not() 
 	{
 		TCID=102;
 		boolean act = home.verifylogo();
 		Assert.assertTrue(act);
-		//
+		
 	}
-	@Test
+	@Test(priority=1)
 	public void verifystreamename() throws EncryptedDocumentException, IOException, InterruptedException 
 	
 	{
@@ -88,7 +102,7 @@ public class Allen_PlusscheduleTest extends BaseClass
 		Assert.assertEquals(actcourse, expcourse);	
 		//
     }
-	@Test
+	@Test(priority=2)
 	public void varifyschedule() throws EncryptedDocumentException, IOException 
 	{
 		TCID=104;
@@ -96,7 +110,7 @@ public class Allen_PlusscheduleTest extends BaseClass
 		String exp = UtilityClass.getexceldata(3, 1);
 		Assert.assertEquals(act, exp);
 	}
-	@Test
+	@Test(priority=3)
 	public void verifybatchname() throws EncryptedDocumentException, IOException 
 	{
 		TCID=105;
@@ -106,7 +120,7 @@ public class Allen_PlusscheduleTest extends BaseClass
 	   
 	}
 	
-	@Test
+	@Test(priority=4)
 	public void verifynoticationbell() throws InterruptedException {
 		TCID=106;
 		boolean act = home.validatebell();
@@ -120,7 +134,7 @@ public class Allen_PlusscheduleTest extends BaseClass
 		Assert.assertEquals(act, exp, "failed: class is scheduled");
 		
 	}
-	@Test//(enabled =false)
+	@Test(priority=5)
 	public void verifyNotificatontext() throws EncryptedDocumentException, IOException, InterruptedException {
 		TCID=108;
 		 boolean act = home.validatenotificationtext();
@@ -128,7 +142,7 @@ public class Allen_PlusscheduleTest extends BaseClass
 		Thread.sleep(1000);
 		
 	}
-	@Test
+	@Test(priority=6)
 	public void verify_i_button() throws EncryptedDocumentException, IOException {
 		TCID=109;
 		home.validate_I_btn();
@@ -138,20 +152,20 @@ public class Allen_PlusscheduleTest extends BaseClass
 		home.popupclose();
 		
 	}
-	@Test
+	@Test(priority=7)
 	public void verifygreetingmsg() {
 		TCID=110;
 		 boolean act = home.validategreetingmsg();
 		Assert.assertTrue(act);
 		
 	}
-	@Test
+	@Test(priority=8)
 	public void verifycurrentdate() {
 		TCID=111;
 		boolean act = home.validatecalenderdate();
 		Assert.assertTrue(act);	
 	}
-	@Test
+	@Test(priority=9)
 	public void verifyyourclass() throws InterruptedException {
 		TCID=112;
 		boolean act = home.validateyourclassbtn();
@@ -165,15 +179,16 @@ public class Allen_PlusscheduleTest extends BaseClass
 		home.clickyourclassapply();
 		//Select s= new Select();
 		Thread.sleep(4000);
+		home.validateyourclassback();
 	}
-	@Test
+	@Test(priority=10)
 	public void verifytodaybtn() throws InterruptedException {
 		TCID=113;
 		boolean act = home.validatetodaybutton();
 		Assert.assertTrue(act);
 		//Thread.sleep(1500);
 	}
-	@Test
+	@Test(priority=11)
 	public void verifyaccesreq() throws InterruptedException {
 		TCID=114;
 		boolean act = home.validateaccessrequest();
@@ -181,45 +196,52 @@ public class Allen_PlusscheduleTest extends BaseClass
 		home.validateaccessreqcancel();
 		
 	}
-	@Test
+	@Test(priority=12)
 	public void validateappversion() {
 		TCID=115;
 		boolean act = home.validateversion();
 		Assert.assertTrue(act);
 		
 	}
-	@Test
+	@Test(priority=13)
 	public void verifycalendervisible_or_not() {
 		TCID=116;
 		boolean act = home.validatecalender();
 		Assert.assertTrue(act);
 		
 	}
-	@Test
+	@Test(priority=14)
 	public void verifyhomepageimage() {
 		TCID=117;
 		boolean act = home.validatehomepageimage();
 		Assert.assertTrue(act, "failed: class is scheduled");
 		
 	}
-	@Test
+	@Test(priority=15)
 	public void verifysettingdropdown() throws InterruptedException {
 		TCID=118;
 		boolean act = home.validatesettingbtn();
 		Assert.assertTrue(act);
 	}
-	@Test
+	@Test(priority=16)
 	public void verifybackbtn() throws InterruptedException {
 		TCID=119;
 		boolean act = home.validatebackbtn();
 		Assert.assertTrue(act);
 	}
-	@Test
+	@Test(priority=17)
 	public void verifyrdeempoint() throws InterruptedException {
 		TCID=120;
 		boolean act = home.validateredeempoint();
 		Assert.assertTrue(act);
 	}
+	
+//	@Test(priority=18)
+//	public void verifycurrentnotificationcount() throws InterruptedException {
+//		TCID=121;
+//		 String act = home.validatecurrentnotificationcount();
+//		System.out.println(act);
+//	}
 	
 //	@Test
 //	public void name() {

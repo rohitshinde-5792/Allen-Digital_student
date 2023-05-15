@@ -19,6 +19,8 @@ public class AllenLoginPage{
 	@FindBy(xpath = "(//button[@type='submit'])[1]")
 	private WebElement LBTN;
 	
+	
+	
 	public AllenLoginPage(WebDriver driver) 
 	{
 		PageFactory.initElements(driver, this);
@@ -44,4 +46,5 @@ public class AllenLoginPage{
 	{
 		LBTN.click();
 	}
+	
 }
