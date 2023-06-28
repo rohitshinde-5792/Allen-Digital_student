@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import Student_Lib.BaseClass;
 import Student_Lib.UtilityClass;
-
+//QA
 public class Allen_Plus_myassets_Test extends BaseClass 
 
 {
@@ -43,7 +43,7 @@ public class Allen_Plus_myassets_Test extends BaseClass
 	
 	
 	@Test(priority=0)
-	public void verifyMyAssets() 
+	public void verifyMyAssets() throws InterruptedException 
 	
 	{
 		TCID=901;
@@ -52,7 +52,7 @@ public class Allen_Plus_myassets_Test extends BaseClass
 	}
 	
 	@Test(priority=1)
-	public void verifyMynotes() throws InterruptedException 
+	public void verifyMyAssetsMynotesibtn() throws InterruptedException 
 	
 	{
 		TCID=902;
@@ -61,23 +61,36 @@ public class Allen_Plus_myassets_Test extends BaseClass
 	}
 	
 	@Test(priority=2)
-	public void verifyMynotesfilter() throws InterruptedException 
+	public void verifyMyAssetsMynotesfilter() throws InterruptedException 
 	
 	{
 		TCID=903;
 		myasset.validatenotefilter();
+		//myasset.validatemynotesfiltersunjectwise();
+		//myasset.validatemynotesfilterfacultywise();
+		//myasset.validatemynotesfilterapply();
+		//myasset.validatemynotesfiltercancel();
 		myasset.validatenotefilterclose();
 	}
 	@Test(priority=3)
-	public void verifyMyHomework() throws InterruptedException 
+	public void verifyMyAssetsMyHomework() throws InterruptedException 
 	
 	{
 		TCID=903;
 		myasset.validateHW();
+		
+	}
+	@Test(priority=4)
+	public void verifymyhwibtn() throws InterruptedException {
+		
 		myasset.validatehwibtn();
 		myasset.validatehwibtnclose();
 	}
-	
+	@Test(priority=5)
+	public void verifyMyassermymentor() {
+		
+		myasset.validatemymentor();
+	}
 	@AfterMethod
 	public void appLogout(ITestResult result) throws IOException, InterruptedException
 	{

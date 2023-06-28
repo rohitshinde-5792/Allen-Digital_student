@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import Student_Lib.BaseClass;
 import Student_Lib.UtilityClass;
-
+//QA
 public class Allen_Plus_blog_Test extends BaseClass
 
 {
@@ -22,7 +22,7 @@ public class Allen_Plus_blog_Test extends BaseClass
 	blogpage blog;
 	
 	@BeforeClass
-	public void Setup() throws IOException 
+	public void Setup() throws IOException, InterruptedException 
 	
 	{
 		
@@ -31,19 +31,14 @@ public class Allen_Plus_blog_Test extends BaseClass
 		home = new AllenschedulePage(driver);
 	    blog=new blogpage(driver);
 	    
-	}
-	@BeforeMethod
-	public void logintoapp() throws IOException, InterruptedException 
-	
-	{
-		
-		login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
+	    login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
 		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
 		Thread.sleep(500);
 		login1.enterCpt(UtilityClass.getPFdata("master_cpt"));
 		login1.clickOnLoginBtn();
 	    Thread.sleep(3000);
 	}
+	
 	
 	@Test
 	public void verifyBlogg() 

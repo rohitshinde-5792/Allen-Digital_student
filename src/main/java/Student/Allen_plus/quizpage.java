@@ -4,14 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+//QA
 public class quizpage {
 	
 	@FindBy(xpath = "//*[text()='Quiz']")
 	private WebElement Quiz; 
 	@FindBy(xpath = "//img[@class='info-icon ng-star-inserted']")
 	private WebElement Quiz_ibtn; 
-	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/closewhite.svg']")
+	@FindBy(xpath = "//*[@id=\"rate-wrapper\"]/div/div/div[2]/div[1]")
 	private WebElement Quiz_ibtnclose; 
 //	@FindBy(xpath = "//*[text()='Quiz']")private WebElement Quiz; 
 //	@FindBy(xpath = "//*[text()='Quiz']")private WebElement Quiz; 

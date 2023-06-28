@@ -7,11 +7,11 @@
   <test  name="Test"  >
     <classes>
     
+     <class name="Student.Allen_plus.Alln_pluslogintest"/>
+     <class name="Student.Allen_plus.dataprovider_login_test"/>
       <class name="Student.Allen_plus.Allen_PlusscheduleTest"/>
       <class name="Student.Allen_plus.Allen_Plus_recordedcontent_Test"/>
-      <class name="Student.Allen_plus.Allen_Plus_digitalmtl_Test"/>
-      <class name="Student.Allen_plus.Allen_Plus_testreport_Test"/>
-      <class name="Student.Allen_plus.Allen_Plus_doubtsolution_Test"/>
+     <class name="Student.Allen_plus.Allen_Plus_doubtsolution_Test"/>
       <class name="Student.Allen_plus.Allen_Plus_bulletinboard_Test"/>
       <class name="Student.Allen_plus.Allen_Plus_feedback_Test"/>
       <class name="Student.Allen_plus.Allen_Plus_quiz_Test"/>
@@ -20,6 +20,8 @@
       <class name="Student.Allen_plus.Allen_Plus_recreationroom_Test"/>
       <class name="Student.Allen_plus.Allen_Plus_blog_Test"/>
       <class name="Student.Allen_plus.Allen_Plus_rateus_Test"/>
+       <class name="Student.Allen_plus.Allen_Plus_digitalmtl_Test"/>
+      
         
     </classes>
   </test> <!-- Test -->

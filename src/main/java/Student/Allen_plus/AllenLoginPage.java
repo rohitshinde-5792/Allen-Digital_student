@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+//QA
 public class AllenLoginPage{
 	
 	@FindBy(xpath = "(//input[@name='user'])[1]")
@@ -16,8 +16,14 @@ public class AllenLoginPage{
 	@FindBy(xpath = "//input[@id='reg-code']")
 	private WebElement CPC;
 	
-	@FindBy(xpath = "(//button[@type='submit'])[1]")
+	@FindBy(xpath = "//button[@id='submit']")
 	private WebElement LBTN;
+	
+	@FindBy(xpath = "//a[@class='Forget-Password-']")
+	private WebElement forgotpass;
+	
+	@FindBy(xpath = "(//img[@src='https://dvvwf08ea9qan.cloudfront.net/allenplus3/assets/images/AllenLogo.png'])[1]")
+	private WebElement loginpagelogo;
 	
 	
 	
@@ -47,4 +53,20 @@ public class AllenLoginPage{
 		LBTN.click();
 	}
 	
+	public boolean validateforgotpass() {
+		
+		boolean act = forgotpass.isEnabled();
+		return act;
+	}
+	
+	public boolean validateloginpagelogo() {
+		
+		boolean act = loginpagelogo.isDisplayed();
+		return act;
+	}
+	
+	public boolean validateloginbtn() {
+		boolean act = LBTN.isEnabled();
+		return act;
+	}
 }

@@ -9,9 +9,9 @@ public class supportpage {
 	
 	@FindBy(xpath = "//*[text()='Support ']")
 	private WebElement Support; 
-	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/info-icon-new.png']")
+	@FindBy(xpath = "/html/body/app-root/app-header/nav/a[2]/span/img")
 	private WebElement Supportibtn; 
-	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/closewhite.svg']")
+	@FindBy(xpath = "//*[@id=\"rate-wrapper\"]/div/div/div[2]/div[1]")
 	private WebElement Supportibtnclose; 
 	@FindBy(xpath = "//li[text()='Access Request & Reward Points']")
 	private WebElement SupportAccessReqReward; 
@@ -37,7 +37,7 @@ public class supportpage {
 	private WebElement SupportOther; 
 	@FindBy(xpath = "//li[text()='Test & Reports']")
 	private WebElement SupportTestReports; 
-	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/ask-tech.png']")
+	@FindBy(xpath = "/html/body/app-root/section/app-technical-support/div[2]/div[2]/div[1]/div[2]/a/img")
 	private WebElement SupportAksyourissue;
 	@FindBy(xpath = "//input[@id='searcText']")
 	private WebElement SupportsearcText; 
@@ -51,12 +51,13 @@ public class supportpage {
 	private WebElement Supportfilterclose; 
 	@FindBy(xpath = "//button[@class='ask-doubt']")
 	private WebElement Supportnewissue; 
-	@FindBy(xpath = "(//button[text()=' Cancel '])[2]")
+	@FindBy(xpath = "/html/body/app-root/section/app-technical-support/p-dialog[3]/div/div/div[2]/div[2]/div[4]/button")
 	private WebElement Supportissuecancel; 
 	@FindBy(xpath = "//img[@class='hand-icon back-button-cis ng-star-inserted']")
 	private WebElement Supportissuepageback; 
-//	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/ask-tech.png']")
-//	private WebElement SupportAksyourissue; 
+	@FindBy(xpath = "(//img[@src='https://adhelp.myallendigital.com/wp-content/uploads/2023/03/adhelp-allendigital-logo.png'])[2]")
+	private WebElement Allendigitalmanuallogo; 
+
 	public supportpage(WebDriver driver) 
 	{
 		PageFactory.initElements(driver, this);
@@ -68,6 +69,11 @@ public class supportpage {
 		boolean ST = Support.isEnabled(); return ST;		
 	}
 	
+	public String validatesupporttext() {
+		
+		String sup = Support.getText();
+		return sup;
+	}
 	public void validatesupportibtn() throws InterruptedException {
 		
 		Supportibtn.click();
@@ -201,5 +207,10 @@ public class supportpage {
 		 Thread.sleep(1000);
 	}
 	
+	public boolean validateAllendigitalmanuallogo() {
+		
+		boolean act = Allendigitalmanuallogo.isDisplayed();
+		return act;
+	}
 	
 }

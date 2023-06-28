@@ -4,68 +4,62 @@
   <listeners>
     <listener class-name="ExtendReports.ExtentReporterNG"/>
   </listeners>
-  <test thread-count="5" parallel="classes" name="Test(failed)">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Student.Allen_plus.Allen_Plus_doubtsolution_Test">
+      <class name="Student.Allen_plus.dataprovider_login_test">
         <methods>
-          <include name="verifyBrodcast"/>
-          <include name="appLogout"/>
-          <include name="verifyunresolvedwithsolution"/>
-          <include name="verifyfilter"/>
-          <include name="logoutApp"/>
-          <include name="verifyexerciseapply"/>
-          <include name="verifyBrodcast_i_btn"/>
-          <include name="verifyresolvddoubts"/>
-          <include name="verifyexercisesubject"/>
-          <include name="verifyexercise"/>
-          <include name="verifyrace"/>
-          <include name="verifyexercisetopic"/>
-          <include name="verifysavedBrodcast"/>
-          <include name="verifyaksdoubtbtn"/>
-          <include name="verifyibtn"/>
-          <include name="Setup"/>
-          <include name="verifyunresolvedoubt"/>
+          <include name="testLogin" invocation-numbers="1 2 4 5 6 7"/>
+          <include name="applogout"/>
         </methods>
-      </class> <!-- Student.Allen_plus.Allen_Plus_doubtsolution_Test -->
-      <class name="Student.Allen_plus.Allen_Plus_digitalmtl_Test">
+      </class> <!-- Student.Allen_plus.dataprovider_login_test -->
+      <class name="Student.Allen_plus.Allen_PlusscheduleTest">
         <methods>
-          <include name="logoutApp"/>
-          <include name="verifyclassrecording"/>
-          <include name="verifyexercisevidsol"/>
-          <include name="verifyracevideosol"/>
-          <include name="appLogout"/>
+          <include name="verifyschedulesidepanelclosebtn"/>
+          <include name="verifyschedule_i_button_and_popupname"/>
+          <include name="verifyscheduleclassrecording"/>
           <include name="Setup"/>
+          <include name="verifyscheduleNotificatontext"/>
+          <include name="verifyscheduleaccesreq"/>
+          <include name="appLogout"/>
+          <include name="verifyscheduleaccesreqpage"/>
+          <include name="logoutApp"/>
         </methods>
-      </class> <!-- Student.Allen_plus.Allen_Plus_digitalmtl_Test -->
+      </class> <!-- Student.Allen_plus.Allen_PlusscheduleTest -->
       <class name="Student.Allen_plus.Allen_Plus_myassets_Test">
         <methods>
-          <include name="verifyMyHomework"/>
           <include name="Setup"/>
+          <include name="verifyMyassermymentor"/>
           <include name="appLogout"/>
           <include name="logoutApp"/>
         </methods>
       </class> <!-- Student.Allen_plus.Allen_Plus_myassets_Test -->
-      <class name="Student.Allen_plus.Allen_Plus_bulletinboard_Test">
+      <class name="Student.Allen_plus.Allen_Plus_digitalmtl_Test">
         <methods>
-          <include name="Setup"/>
-          <include name="verifybulletinknoledgebase"/>
-          <include name="verifyknoledgebasesearchbox"/>
           <include name="logoutApp"/>
+          <include name="verifydigitalmtlexercisevidsol"/>
+          <include name="verifydigitalmtlexercisevidsoltext"/>
           <include name="appLogout"/>
-        </methods>
-      </class> <!-- Student.Allen_plus.Allen_Plus_bulletinboard_Test -->
-      <class name="Student.Allen_plus.Allen_PlusscheduleTest">
-        <methods>
-          <include name="verifysettingdropdown"/>
           <include name="Setup"/>
-          <include name="verifyaccesreq"/>
-          <include name="verifybackbtn"/>
-          <include name="verifyyourclass"/>
+          <include name="verifydigitalmtlclassrecordingtext"/>
+          <include name="verifydigitalmtlclassrecording"/>
+        </methods>
+      </class> <!-- Student.Allen_plus.Allen_Plus_digitalmtl_Test -->
+      <class name="Student.Allen_plus.Alln_pluslogintest">
+        <methods>
           <include name="appLogout"/>
-          <include name="verifyrdeempoint"/>
+          <include name="Setup"/>
+          <include name="verifyloginbtn_enabled_or_notwithoutcredentials"/>
           <include name="logoutApp"/>
         </methods>
-      </class> <!-- Student.Allen_plus.Allen_PlusscheduleTest -->
+      </class> <!-- Student.Allen_plus.Alln_pluslogintest -->
+      <class name="Student.Allen_plus.Allen_Plus_rateus_Test">
+        <methods>
+          <include name="Setup"/>
+          <include name="logoutApp"/>
+          <include name="verifyRateUsnotnowbtn"/>
+          <include name="appLogout"/>
+        </methods>
+      </class> <!-- Student.Allen_plus.Allen_Plus_rateus_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

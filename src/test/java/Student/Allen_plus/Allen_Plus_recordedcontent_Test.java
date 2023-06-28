@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import Student_Lib.BaseClass;
 import Student_Lib.UtilityClass;
-
+//QA
 public class Allen_Plus_recordedcontent_Test extends BaseClass 
 
 {
@@ -46,7 +46,7 @@ public class Allen_Plus_recordedcontent_Test extends BaseClass
 
 	
 	@Test(priority=0)
-	public void verifyrevisionbtn() throws EncryptedDocumentException, IOException 
+	public void verifyrecordedcontentbtn() throws EncryptedDocumentException, IOException 
 	{
 		TCID =201;
 	    boolean act = revision.revisionButtonenablednot();
@@ -54,9 +54,10 @@ public class Allen_Plus_recordedcontent_Test extends BaseClass
 		
 	}
 	@Test(priority=1)
-	public void verifyvideo() throws InterruptedException {
-		
+	public void verifyrecordedcontentvideo() throws InterruptedException {
+		// revision.revisionButtonenablednot();
 		revision.validatefirstvideo();
+		Thread.sleep(5000);
 		revision.validatevideoback();
 	}
 //	@Test(priority=2)
@@ -67,15 +68,15 @@ public class Allen_Plus_recordedcontent_Test extends BaseClass
 //		revision.validateorgchemistry();
 //	}
 	@Test(priority=3)
-	public void verifyselectsubjectandtopic() throws EncryptedDocumentException, IOException, InterruptedException {
+	public void verifyrecordedcontentselectsubjectandtopic() throws EncryptedDocumentException, IOException, InterruptedException {
 		  
-		  revision.validateselectsubject();
-		  revision.validateorgchemistry();
-		  revision.validatetopic();
-		  revision.validateorgchemnomenclature();
-		  revision.validateapplybtn();
+			  revision.validateselectsubject();
+			  revision.validateorgchemistry();
+			  revision.validatetopic();
+			  revision.validateorgchemnomenclature();
+			  revision.validateapplybtn();
 	}
-	
+	 
 //	@Test
 //	public void scrollpage() throws InterruptedException {
 //		revision.revisionButtonenablednot();
@@ -83,12 +84,7 @@ public class Allen_Plus_recordedcontent_Test extends BaseClass
 //	    UtilityClass.scrollDown(driver);
 //		Thread.sleep(2000);
 //	}
-//	@Test
-//	public void name() {
-//		// not working bcz select tagname is not present
-//		revision.selectdummycode();
-//		
-//	}
+
 	
 	@AfterMethod
 	public void appLogout(ITestResult result) throws IOException, InterruptedException

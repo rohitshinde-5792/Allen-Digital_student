@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import Student_Lib.BaseClass;
 import Student_Lib.UtilityClass;
-
+//QA
 public class Allen_Plus_rateus_Test extends BaseClass 
 
 {
@@ -22,7 +22,7 @@ public class Allen_Plus_rateus_Test extends BaseClass
 	rateuspage rateus;
 	
 	@BeforeClass
-	public void Setup() throws IOException 
+	public void Setup() throws IOException, InterruptedException 
 	
 	{
 		
@@ -31,21 +31,17 @@ public class Allen_Plus_rateus_Test extends BaseClass
 		home = new AllenschedulePage(driver);
 	    rateus=new rateuspage(driver);
 	    
-	}
-	@BeforeMethod
-	public void logintoapp() throws IOException, InterruptedException 
-	
-	{
-		
-		login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
+	    login1.inpAllenFormNumber(UtilityClass.getPFdata("fnumber"));
 		login1.inpAllenPassword(UtilityClass.getPFdata("pass"));
 		Thread.sleep(500);
 		login1.enterCpt(UtilityClass.getPFdata("master_cpt"));
 		login1.clickOnLoginBtn();
 	    Thread.sleep(3000);
+	    
 	}
 	
-	@Test
+	
+	@Test(priority=0)
 	public void verifyRateUs() 
 	
 	{
@@ -53,6 +49,25 @@ public class Allen_Plus_rateus_Test extends BaseClass
 		boolean aact = rateus.verifyRateUs();
 		Assert.assertTrue(aact);
 	}
+	
+//	@Test(priority=1)
+//	public void verifyRateUsstar() 
+//	
+//	{
+//		TCID=1302;
+//		 rateus.validatestars();
+//		//Assert.assertTrue(aact);
+//	}
+	
+	@Test(priority=2)
+	public void verifyRateUsnotnowbtn() 
+	
+	{
+		TCID=1303;
+		 rateus.validateNotnow();
+		//Assert.assertTrue(aact);
+	}
+	
 	@AfterMethod
 	public void appLogout(ITestResult result) throws IOException, InterruptedException
 	{
@@ -72,7 +87,7 @@ public class Allen_Plus_rateus_Test extends BaseClass
 	@AfterClass
 	public void logoutApp()
 	{
-		//home.logoutuser();
+		home.logoutuser();
 	     driver.quit();
 	}
 	

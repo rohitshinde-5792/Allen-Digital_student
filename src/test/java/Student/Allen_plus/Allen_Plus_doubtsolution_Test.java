@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import Student_Lib.BaseClass;
 import Student_Lib.UtilityClass;
-
+//QA
 public class Allen_Plus_doubtsolution_Test extends BaseClass 
 
 {
@@ -45,103 +45,152 @@ public class Allen_Plus_doubtsolution_Test extends BaseClass
 	
 	{
 		TCID=501;
-		boolean acta = doubtsolution.verifydoubtsolution();
-		Assert.assertTrue(acta);
+		boolean Obje = doubtsolution.verifydoubtsolution();
+		Assert.assertTrue(Obje);
 		Thread.sleep(2000);
 	}
+	
 	@Test(priority=1)
-	public void verify_i_btn() throws InterruptedException {
+	public void verifydoubtsolution_i_btn() throws InterruptedException {
 		TCID=502;
 		doubtsolution.validate_i_btn();
 	}
+	
 	@Test(priority=2)
-	public void verifyaksdoubtbtn() throws InterruptedException {
+	public void verifydoubtsolutionaksdoubtbtn() throws InterruptedException {
 		TCID=503;
 		doubtsolution.validateAskdoubtbtn();
 	}
 	
 	@Test(priority=3)
-	public void verifyfilter() {
+	public void verifydoubtsolutionfilter() throws InterruptedException {
 		TCID=504;
 		doubtsolution.validatefilter();
 	}
 	
 	@Test(priority=4)
-	public void verifyunresolvedoubt() {
+	public void verifyunresolvedoubt() throws InterruptedException {
 		TCID=505;
-		doubtsolution.validateunresolvedoubt();
-	}
-	@Test(priority=5)
-	public void verifyunresolvedwithsolution() {
-		TCID=506;
-		doubtsolution.validateunresolvewithsolution();
-	}
-	@Test(priority=6)
-	public void verifyresolvddoubts() {
-		TCID=507;
-		doubtsolution.validateresolve();
-	}
-	@Test(priority=7)
-	public void verifyBrodcast() {
-		TCID=508;
-		doubtsolution.validatebrodcast();
+		boolean act = doubtsolution.validateunresolvedoubt();
+		Assert.assertTrue(act);
 		
 	}
+	@Test(priority=5)
+	public void verifydoubtsolutionunresolvedwithsolution() throws InterruptedException {
+		TCID=506;
+		boolean act = doubtsolution.validateunresolvewithsolution();
+		Assert.assertTrue(act);
+	}
+	
+	@Test(priority=6)
+	public void verifydoubtsolutionresolvddoubts() {
+		TCID=507;
+		 boolean act = doubtsolution.validateresolve();
+		Assert.assertTrue(act);
+	}
+	@Test(priority=7)
+	public void verifydoubtsolutionBrodcast() throws InterruptedException {
+		TCID=508;
+		boolean act = doubtsolution.validatebrodcast();
+		Assert.assertTrue(act);
+	}
 	@Test(priority=8)
-	public void verifyBrodcast_i_btn() throws InterruptedException {
+	public void verifydoubtsolutionBrodcast_i_btn() throws InterruptedException {
 		TCID=509;
 		doubtsolution.validatebrod_i_btn();
 		
 	}
 	@Test(priority=9)
-	public void verifysavedBrodcast() throws InterruptedException {
+	public void verifydoubtsolutionsavedBrodcast() throws InterruptedException {
 		TCID=510;
-		doubtsolution.validatesavedBrodcast();
+		boolean act = doubtsolution.validatesavedBrodcast();
+		Assert.assertTrue(act);
 		
 	}
 	
 	@Test(priority=10)
-	public void verifyexercise() throws InterruptedException {
+	public void verifydoubtsolutionexercise() throws InterruptedException {
 		TCID=511;
-		doubtsolution.validateexcercise();
-		
+		boolean act = doubtsolution.validateexcercise();
+		Assert.assertTrue(act);
 	}
+	
 	@Test(priority=11)
-	public void verifyibtn() throws InterruptedException {
+	public void verifydoubtsolutionibtn() throws InterruptedException {
 		TCID=512;
 		doubtsolution.validate_exe_i_btn();
 	}
+	
 	@Test(priority=12)
-	public void verifyexercisesubject() throws InterruptedException {
+	public void verifydoubtsolutionexercisesubject() throws InterruptedException {
+	//try {
 		TCID=513;
 		
 		doubtsolution.validateexselectsubject();
+		//doubtsolution.validateMathsubjectselect();
 	}
 	
+//	catch (Exception e){
+//		System.out.println("No such element tc 513");
+//		//throw(e);
+//		} 
+//	}
+	
+	
 	@Test(priority=13)
-	public void verifyexercisetopic() throws InterruptedException {
+	public void verifydoubtsolutionexercisetopic() throws InterruptedException {
 		TCID=512;
 		doubtsolution.validateexselecttopic();
-		
+		//doubtsolution.validatemathtopic();
 	}
 	
 	@Test(priority=14)
-	public void verifyexerciseapply() throws InterruptedException {
+	public void verifydoubtsolutionexerciseapply() throws InterruptedException {
 		TCID=513;
 		doubtsolution.validateexapplybtn();
 	}
 	
 
 	@Test(priority=15)
-	public void verifyrace() throws InterruptedException {
+	public void verifydoubtsolutionrace() throws InterruptedException {
+		
 		TCID=514;
-		doubtsolution.validaterace();
+		boolean act = doubtsolution.validaterace();
+		Assert.assertTrue(act);
+		
+	}
+	
+	@Test(priority=16)
+	public void verifydoubtsolutionraceibtn() throws InterruptedException {
+		
+		
 		doubtsolution.validaterace_ibtn();
+		
+	}
+	
+	@Test(priority=17)
+	public void verifydoubtsolutionracesubject() throws InterruptedException {
+		
+		
 		doubtsolution.validateracesubject();
+		
+	}
+	
+	@Test(priority=18)
+	public void verifydoubtsolutionracetopic() throws InterruptedException {
+		
+		
 		doubtsolution.validateexselecttopic();
+		
+	}
+	
+	@Test(priority=19)
+	public void verifydoubtsolutionraceracevideo() throws InterruptedException {
+		
+		
 		doubtsolution.validateracevideo();
 		doubtsolution.validateraceapplybtn();
-	
+		Thread.sleep(5000);
 	}
 	@AfterMethod
 	public void appLogout(ITestResult result) throws IOException, InterruptedException

@@ -5,29 +5,10 @@
     <classes>
       <class name="Student.Allen_plus.Allen_PlusscheduleTest">
         <methods>
-          <include name="varifyschedule"/>
-          <include name="verifytodaybtn"/>
-          <include name="verify_i_button"/>
-          <include name="verifysettingdropdown"/>
-          <include name="validateappversion"/>
-          <include name="verifyNotificatontext"/>
-          <include name="verifyaccesreq"/>
-          <include name="verifyhomepageimage"/>
-          <include name="verifybatchname"/>
-          <include name="verifybackbtn"/>
-          <include name="Verifyprofilename"/>
-          <include name="appLogout"/>
-          <include name="verifycurrentdate"/>
-          <include name="verifyrdeempoint"/>
-          <include name="logoutApp"/>
-          <include name="verifyclassisScheduledORnot"/>
-          <include name="verifynoticationbell"/>
-          <include name="verifylogoisdisplyed_or_not"/>
+          <include name="verifyscheduleclassrecording"/>
           <include name="Setup"/>
-          <include name="verifycalendervisible_or_not"/>
-          <include name="verifygreetingmsg"/>
-          <include name="verifystreamename"/>
-          <include name="verifyyourclass"/>
+          <include name="appLogout"/>
+          <include name="logoutApp"/>
         </methods>
       </class> <!-- Student.Allen_plus.Allen_PlusscheduleTest -->
     </classes>

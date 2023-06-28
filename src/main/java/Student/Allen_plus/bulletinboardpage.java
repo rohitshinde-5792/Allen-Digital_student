@@ -4,16 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+//QA
 public class bulletinboardpage {
 
-	@FindBy(xpath = "//span[normalize-space()='Bulletin Board']")
+	@FindBy(xpath = "//span[text()='Bulletin Board']")
 	private WebElement BulletinBoard; 
 	@FindBy(xpath = "//span[@class='sidebar-icon assets bulletin']")
 	private WebElement BulletinBoardicon;
 	@FindBy(xpath = "//img[@class='info-icon ng-star-inserted']")
 	private WebElement BulletinB_ibtn;
-	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/closewhite.svg']")
+	@FindBy(xpath = "//*[@id=\"rate-wrapper\"]/div/div/div[2]/div[1]")
 	private WebElement BulletinB_closeibtn;
 	@FindBy(xpath = "//input[@id='searcText']")
 	private WebElement noticesearchbox;
@@ -23,15 +23,15 @@ public class bulletinboardpage {
 	private WebElement noticefilter;
 	@FindBy(xpath = "(//span[@class='inline-block'])[2]")
 	private WebElement BulletinBoardifilter;
-	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/close.png']")
+	@FindBy(xpath = "/html/body/app-root/section/app-notice-board/div[2]/div/app-filter/div/div/div/h3/span/img")
 	private WebElement BulletinBoardfilterclose;
-	@FindBy(xpath = "//span[text()='Knowledge Base']")
+	@FindBy(xpath = "(//li[@class='nav-item dropdown ng-star-inserted active']//span)[4]")
 	private WebElement KnowledgeBase;
 	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/info-icon-new.png']")
 	private WebElement KnowledgeBaseibtn;
 	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/closewhite.svg']")
 	private WebElement KnowledgeBaseibtnclose;
-	@FindBy(xpath = "//input[@id='src']")
+	@FindBy(xpath = "//div//input[@id='src']")
 	private WebElement KnowledgeBasesearch;
 //	@FindBy(xpath = "//span[@tin']")private WebElement BulletinBoardicon;
 //	@FindBy(xpath = "//span[@tin']")private WebElement BulletinBoardicon;
@@ -47,7 +47,7 @@ public class bulletinboardpage {
 	{
 		
 		BulletinBoard.click();
-		Thread.sleep(1500);
+		Thread.sleep(2500);
 		boolean BB = BulletinBoard.isEnabled(); 
 		return BB;
 	}

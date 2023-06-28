@@ -7,28 +7,29 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Student_Lib.UtilityClass;
-
+//QA
 public class Recordedcontentpage {
 	
-	@FindBy(xpath = "(//span[text()='Recorded Content'])[1]") private WebElement revisionB;
-	@FindBy(xpath = "(//div[@class='cap'])[1]") 
+	@FindBy(xpath = "(//span[text()='Recorded Content'])[1]") 
+	private WebElement revisionB;
+	@FindBy(xpath = "//*[@id=\"dialog1\"]/div[1]/div/div/div[1]/div[2]") 
 	private WebElement firstvideoplay;	
-	@FindBy(xpath = "(//img[@src='assets/images/test-play1.png'])[1]") 
+	@FindBy(xpath = "(//div[@class='car-wrapper ng-star-inserted']//img)[2]") 
 	private WebElement videoplay;
-	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/left-arrow.png']")
+	@FindBy(xpath = "/html/body/app-root/section/app-result/div/div[1]/div[1]/span[1]/img")
 	private WebElement videoback;
-	@FindBy(xpath = "//span[text()='Select Subject']") 
+	@FindBy(xpath = "//*[@id=\"dialog1\"]/p-tabview/div/div/div[1]/p-dropdown/div/span") 
 	private WebElement selectsubject;
-	@FindBy(xpath = "//span[text()='Select Topic']") 
+	@FindBy(xpath = "//*[@id=\"dialog1\"]/p-tabview/div/div/div[2]/p-dropdown/div/span") 
 	private WebElement selecttopic;
-	@FindBy(xpath = "//button[text()='Apply']") 
+	@FindBy(xpath = "//*[@id=\"dialog1\"]/p-tabview/div/div/button") 
 	private WebElement Applybtn;
-	@FindBy(xpath = "//span[text()='Organic Chemistry']") 
-	private WebElement orgchemistry;
-	@FindBy(xpath = "//span[text()='Nomenclature']") 
-	private WebElement nomenclature;
-//	@FindBy(xpath = "//button[text()='Apply']") 
-//	private WebElement apply;
+	@FindBy(xpath = "//span[text()='Mathematics']") 
+	private WebElement maths;
+	@FindBy(xpath = "//span[text()='Differential Equation']") 
+	private WebElement Differential_Equation;
+	@FindBy(xpath = "//span[text()='Recorded Content ']") 
+	private WebElement recordedcontentmaintitle;
 //	@FindBy(xpath = "//*[text()='Revision']") private WebElement revisionB;
 //	@FindBy(xpath = "//*[text()='Revision']") private WebElement revisionB;
 //	@FindBy(xpath = "//*[text()='Revision']") private WebElement revisionB;
@@ -52,7 +53,7 @@ public class Recordedcontentpage {
 		selectsubject.click();
 		
 //		Applybtn.click();
-//		Thread.sleep(5000);
+		Thread.sleep(1500);
 //		boolean selecttop = selecttopic.isEnabled();
 //		return selecttop;
 	}
@@ -81,19 +82,20 @@ public void validatevideoback() {
 
 public void validateorgchemistry() throws InterruptedException {
 	
-	orgchemistry.click();
+	maths.click();
 	Thread.sleep(1000);
 }
 
 public void validateorgchemnomenclature() throws InterruptedException {
 	
-	nomenclature.click();
+	Differential_Equation.click();
 	Thread.sleep(1000);
 }
 
-public void validateapplybtn() {
+public void validateapplybtn() throws InterruptedException {
 	
 	Applybtn.click();
+	Thread.sleep(6000);
 }
 //	public void handlesubjectdropdown() {
 //		

@@ -24,8 +24,8 @@ public class selectsessionpage {
 	
 	 public void clicksession() throws InterruptedException {
 			
-		session2223.click();
-		Thread.sleep(1000);
+//		session2223.click();
+//		Thread.sleep(1000);
 		session2324.click();
 	}
 	

@@ -27,7 +27,7 @@ public class UtilityClass {
 	public static String getexceldata(int row, int col) throws EncryptedDocumentException, IOException 
 	{
 		FileInputStream file = new FileInputStream("C:\\Users\\ginger\\eclipse-workspace\\AllenCode-master\\AllenCode-master\\Testdata\\Allen_plus_Testdata.xlsx");
-		Sheet datasheet = WorkbookFactory.create(file).getSheet("Student");
+		Sheet datasheet = WorkbookFactory.create(file).getSheet("Student (2)");
 		String exdata = datasheet.getRow(row).getCell(col).getStringCellValue();
 		return exdata;
 	}
@@ -35,7 +35,7 @@ public class UtilityClass {
 
 	{
 	File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	File dest=new File("C:\\Users\\ginger\\eclipse-workspace\\AllenCode-master\\AllenCode-master\\Screenshots\\"+TCID+".jpg");
+	File dest=new File("C:\\Users\\ginger\\eclipse-workspace\\AllenCode-master\\AllenCode-master\\Screenshot"+TCID+".jpg");
 	// FileUtils.copyFile(src, dest);
 	FileHandler.copy(src, dest);
 	}

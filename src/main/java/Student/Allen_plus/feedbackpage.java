@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+//QA
 public class feedbackpage
 {
 	@FindBy(xpath = "//span[text()='Feedback']")
@@ -13,7 +13,8 @@ public class feedbackpage
 	private WebElement Feedbackibtn;
 	@FindBy(xpath = "//img[@src='https://d1sc0s0nb5z771.cloudfront.net/allenplus3/assets/images/closewhite.svg']")
 	private WebElement Feedbackibtnclose;
-//	@FindBy(xpath = "//span[text()='Feedback']")private WebElement Feedback;
+	@FindBy(xpath = "//td[normalize-space()='26 may feedback']")
+	private WebElement Feedbackopen;
 //	@FindBy(xpath = "//span[text()='Feedback']")private WebElement Feedback;
 //	@FindBy(xpath = "//span[text()='Feedback']")private WebElement Feedback;
 	
@@ -39,4 +40,8 @@ public class feedbackpage
 		Feedbackibtnclose.click();
 	}
 	
+	public void validatefeedbackopen () {
+		
+		Feedbackopen.click();
+	}
 }

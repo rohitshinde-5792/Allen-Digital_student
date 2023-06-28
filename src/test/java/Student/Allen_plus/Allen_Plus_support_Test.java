@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -12,7 +13,7 @@ import org.testng.annotations.Test;
 
 import Student_Lib.BaseClass;
 import Student_Lib.UtilityClass;
-
+//QA
 public class Allen_Plus_support_Test extends BaseClass
 
 {
@@ -39,9 +40,14 @@ public class Allen_Plus_support_Test extends BaseClass
 	    Thread.sleep(3000);
 	}
 	
+	@Test
+	public void verifysupporttextprint() {
+		String act = support.validatesupporttext();
+		System.out.println(act);
+	}
 	
 	@Test(priority=0)
-	public void verifySupport() throws InterruptedException 
+	public void verifySupport_isenabled_orNOT() throws InterruptedException 
 	
 	{
 		TCID=1001;
@@ -52,7 +58,7 @@ public class Allen_Plus_support_Test extends BaseClass
 	}
 	
 	@Test(priority=1)
-	public void verifySupportibtn() throws InterruptedException 
+	public void verifySupport_ibtn_open_and_close() throws InterruptedException 
 	
 	{
 		TCID=1002;
@@ -214,6 +220,12 @@ public class Allen_Plus_support_Test extends BaseClass
 		TCID=1021;
 		 support.validateAksyourissueonmain();
 		 support.validateSupportissuecancel();
+	}
+	@Test(enabled = false)
+	public void verifyallendigimanuallogo() {
+		
+		boolean act = support.validateAllendigitalmanuallogo();
+		Assert.assertTrue(act);
 	}
 	
 	@AfterMethod
